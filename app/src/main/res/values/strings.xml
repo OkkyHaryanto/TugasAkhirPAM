@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TugasAkhir</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="Masuk">Masuk</string>
+    <string name="btndaftar">daftar?</string>
+    <string name="name">Masukan Nama Anda</string>
+    <string name="alamat">Masukan Alamat Anda</string>
+    <string name="email">Masukan Email Anda</string>
+    <string name="rpassword">Masukan Password Anda</string>
+    <string name="repassword">Masukan Ulang Password Anda</string>
+    <string name="nama">Masukan Nama Anda</string>
+    <string name="telpon">Masukan No Telepon Anda</string>
+    <string name="pesanan">Masukan Jumlah Pesanan</string>
+</resources>
