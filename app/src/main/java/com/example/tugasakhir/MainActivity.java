@@ -10,9 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnmasuk, btndaftar;
+
+    Button btnmasuk, btndaftar; //deklaasi variabel
     EditText edemail, edpassword;
 
+    //menyimpan email dan password
     String nama, password;
 
     @Override
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //untuk menghubungkan pada button yang ada ditampilan layout
         btnmasuk = findViewById(R.id.btnsignin);
         edemail = findViewById(R.id.username);
         edpassword = findViewById(R.id.password);
@@ -33,22 +36,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnmasuk.setOnClickListener(new View.OnClickListener() {
+        btnmasuk.setOnClickListener(new View.OnClickListener() { //agar tombol button bisa diklik
             @Override
             public void onClick(View v) {
-                nama = edemail.getText().toString();
+                nama = edemail.getText().toString(); //untuk menyimpan nama pengguna
                 password = edpassword.getText().toString();
-                String email = "okky";
+                String email = "okky"; //untuk mendeteksi apa benar email yang dimasukan
                 String pass = "123";
 
-                if (nama.isEmpty() || password.isEmpty()) {
+                if (nama.isEmpty() || password.isEmpty()) { //untuk mendekteksi kalau email dan password tidak boleh dikosongkan / harus diisi
                     Toast t = Toast.makeText(getApplicationContext(),
                             "Email dan Password tidak boleh kosong", Toast.LENGTH_LONG);
                     edemail.setError("Email dan Password tidak boleh kosong");
-                    edpassword.setError("Email dan Password tidak boleh kosong");
+                    edpassword.setError("Email dan Password tidak boleh kosong"); //memunculkan tulisan kalau email dan password haarus diisi
                     t.show();
 
                 } else {
+
+                    //untuk cek kalau email dan password yang dimasukan udah benar dan sukses login
 
                     if (nama.equals(email) && password.equals(pass)) {
                         Toast t = Toast.makeText(getApplicationContext(),
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
                         b.putString("b", password.trim());
 
+
+                        //untuk berpindah ke layout homeactivity
                         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
 
                         i.putExtras(b);
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Toast t = Toast.makeText(getApplicationContext(),
                                 "Login Gagal", Toast.LENGTH_LONG);
-                        edemail.setError("Login Gagal");
+                        edemail.setError("Login Gagal"); //untuk memunculkan tulisan login gagal
                         edpassword.setError("Login Gagal");
                         t.show();
                     }

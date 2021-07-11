@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Activitypemesanan extends AppCompatActivity {
-    TextView dtlpesanan, dtlnama, dtlalamat, dtltelepon;
+    TextView dtlpesanan, dtlnama, dtlalamat, dtltelepon; //deklarasi variabel
     Button btnkembalii, btndtlpesan;
     EditText dtlnamaa, dtlalamatt, dtlteleponnn, dtlpesanann;
 
@@ -21,7 +21,7 @@ public class Activitypemesanan extends AppCompatActivity {
         setContentView(R.layout.activity_activitypemesanan);
 
         dtlpesanan = findViewById(R.id.pesanaan);
-        dtlnama = findViewById(R.id.namaa);
+        dtlnama = findViewById(R.id.namaa); //untuk menghubungkan pada tampilan yang ada dilayout
         dtlalamat = findViewById(R.id.alamatt);
         dtltelepon = findViewById(R.id.teleponn);
         btnkembalii = findViewById(R.id.btnkembali);
@@ -34,7 +34,7 @@ public class Activitypemesanan extends AppCompatActivity {
         btnkembalii.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent i = new Intent(getApplicationContext(), HomeActivity.class); //untuk berpindah layout homeactivity
                 startActivity(i);
             }
         });
@@ -42,19 +42,19 @@ public class Activitypemesanan extends AppCompatActivity {
         btndtlpesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (dtlnamaa.getText().toString().isEmpty() ||
+                if (dtlnamaa.getText().toString().isEmpty() || //input harus diisi
                         dtlalamatt.getText().toString().isEmpty() ||
                         dtlnamaa.getText().toString().isEmpty() ||
                         dtlpesanann.getText().toString().isEmpty() ||
                         dtlteleponnn.getText().toString().isEmpty()) {
                     dtlnamaa.setError("Masukkan Nama");
-                    dtlalamatt.setError("Masukkan Alamat");
+                    dtlalamatt.setError("Masukkan Alamat"); //memberi tanda eror dan harus diisi
                     dtlteleponnn.setError("Masukkan Nomor Telepon");
                     dtlpesanann.setError("Masukkan Berapa pesanan");
                 } else {
-                    Toast.makeText(getApplicationContext(), "Pesanan sedang diBuat dan Akan Dikirim",
+                    Toast.makeText(getApplicationContext(), "Pesanan sedang diBuat dan Akan Dikirim", //untuk memunculakn pemberitahuan kalau makan akan dibuat
                             Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                    Intent i = new Intent(getApplicationContext(), HomeActivity.class); //untuk berpindah layout
                     startActivity(i);
                 }
             }
